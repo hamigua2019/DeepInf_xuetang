@@ -14,6 +14,6 @@
    
    
    
-   gat 运行两天。估计，1.74天；估计明天下午一点半跑完。
+   gat 运行两天。估计，1.74天；估计明天下午一点半跑完。（windows，gcn，jupter，估计明天上午6点跑完）
    
    gat比gcn的perfermance好5%？
