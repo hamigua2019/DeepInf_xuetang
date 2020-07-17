@@ -9,8 +9,9 @@
    用windows的jupter会不会快一点，等等看。
    
    jupter，windows gcn 20个小时预估。比mac 终端慢一半。阿里云呢？是慢还是根本就跑不了？
-   似乎jupter，windows gcn比mac跑出来的performance要好不少。
-   但是
+   
+   但是似乎jupter，windows gcn比mac跑出来的performance要好不少。
+   
    
    
    gat 运行两天。估计，1.74天；估计明天下午一点半跑完。
