@@ -51,3 +51,22 @@ V1，V2，哪个是活跃用户。
 有个人为什么让我，是因为有人转发
 
 搜索的作用没有提到。有的人被转发，是因为搜索，主题、不是因为关注。
+
+还有时间的特征，之前没有转发，现在有了，多了。这个没有纳入。Connecting the Dots模型。
+Connecting the Dots: Multivariate Time Series Forecasting with Graph Neural Networks
+
+作者：
+
+Zonghan Wu, Shirui Pan, Guodong Long, Jing Jiang, Xiaojun Chang, Chengqi Zhang
+
+来源：
+
+Machine Learning     
+
+Accepted by KDD 2020
+
+Submitted on 24 May 2020
+
+
+（5）FOREST,MIXhop，分别是什么特征
+（6）由此延伸到。一个人如果不仅仅在工作地，还去别的地方，所谓除了工作读书，还要行万里路。没多走一公里，到一个地方，见X人，聊Y人，个人的收入，平均可支配收入，国家GDP会增长多少倍。如果封闭，可能反智，社会问题。从而导致倒退。
