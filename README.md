@@ -1,83 +1,63 @@
-# DeepInf_xuetang
+Homework6 Report
 
+2020/7/18
 
+一、已完成的工作：
+1. 阅读论文
+   DeepInf框架解决的是根据邻居用户分析预测用户是否具有影响力的问题。
 
+2. 复现模型。
+   调整参数，完成DeepInf_gcn和DeepInf_gat两个模型的复现。两个模型的代码已上传到github的DeepInf_xuetang文件夹。
+* 参数调整细节：
+所有参数都调整为与论文一致，除了batch size保留为原框架的2048。
+Lr修改为0.1；instances for training, validation and test分别修改为75, 12.5, 12.5。
 
-作业完成事项：
-1. 实现gcn：已完成，代码已附；
-   实现gat：已完成，代码已附。
-2. gcn与gat的对比
-   gcn 运行10个半小时；
+* 框架复现细节
+复现gat代码时，将gcn的train.py原代码中model参数修改为gat即可运行。即如：“parser.add_argument('--model', type=str, default='gat’, help="models used")”
    
-   用windows的jupter会不会快一点，等等看。
-   
-   jupter，windows gcn 20个小时预估。比mac 终端慢一半。阿里云呢？是慢还是根本就跑不了？
-   
-   但是似乎jupter，windows gcn比mac跑出来的performance要好不少。
-   
-   
-   
-   gat 运行两天。估计，1.74天；估计明天下午一点半跑完。（windows，gcn，jupter，估计明天上午6点跑完）
-   
-   gat比gcn的perfermance好5%？
 
-3. 改进方面
-   杨成的可不可以嫁接过来。他好像有新的数据。
-   唐老师是不是提升了可以用别的
-   pscn，这个，代码倒是便宜，performance是不是差？
+二、对比：
+1. 实现的结果与论文结果的对比：
+   原框架运行performance不高，GCN的F1值为48.35。参考论文调整参数后，GCN的F1值提高到了53.49，相比论文GCN的F1值53.21，提高了。
+   GAT方面，未修改参数时，框架的F1值为52.18，参数调整跟论文设置参数一致时，F1值提高到了58.32，与论文结果一致。
 
-4. 
-（1）微博有三个以上互关大V的人是非常少的，这群人也并非转发的主要人群，微博的任务应该是激活那些没有互关大V，或者只有一个互关大V的用户，怎么能够让他们变成有三个互关大V，这对社交传播更加有利。只有大V互转并不能促成社交传播变强。
+2. GCN与GAT的对比
+    GAT相比GCN，performance提高了5个百分点。GAT图注意力层与GCN的图卷积层相比，多了一个自适应的边权重系数的维度，可以对其进行自适应力的学习，并通过运用注意力机制，避免引入过多的噪声学习参数，这使得GAT具有高效的表达能力，所以，performance大大提高。
 
-（2）deepwalk这种随机游走的算法在社交网络里面效率肯定是很低的，肯定会找影响力大，而且距离近的。注意力机制GAT是满足了这两个条件吗？
+三、改进工作
+改进工作可以通过参数调整和模型调整或其他方法来进行。
+1. 参数调整层面
+保留了batch size 2048的设置，performance有所提高。
+通过automl自动调参也可以对参数进行调优。不过一般来说，论文框架里实现的performance一般参数层面已经经过调优，通过调整参数带来的performance改进空间不大，如果需要有较大程度的提高，需要从模型本身的修正出发。
+2. 据了解，北京邮电大学杨成老师在2019年主要设计的FOREST框架，由于加入了宏观……元素，performance有所提高。论文名称为：github地址为：FOREST框架，由于时间因素，没有来得及复现。
+此外，唐老师也提到，Mixhop框架也有改进。
+据了解，R-GCN框架基于GCN基于聚合邻居的操作，又增加了聚合关系的维度，使节点的聚合变成一个双重聚合的过程，是异构图建模，相对于同构图建模的GCN、GAT，表现更佳。由于时间关系，无法实现，以后有时间再学习研究。
+3. 从发现潜在影响力用户的角度来说，除了从邻居、关系的图结构挖掘信息，还可以考虑两个方面：
+一是从用户影响力成长时间序列结构的角度来思考，比如纳入用户在不同年度的转发数量的增长变化情况等。这里，有Connecting the Dots框架，值得参考。论文为：“Connecting the Dots: Multivariate Time Series Forecasting with Graph Neural Networks，作者：Zonghan Wu, Shirui Pan, Guodong Long, Jing Jiang, Xiaojun Chang, Chengqi Zhang，来源：Machine Learning     ，Accepted by KDD 2020，Submitted on 24 May 2020”。
+二是从节点属性图角度考虑，也可以考虑建立用户个人知识图谱，从概念成色、逻辑思维等进行影响力潜力赋分，发现潜在影响力者。等等。
 
-只要有一个影响力大，距离离他最近的，原本影响力大，但是离他远，或者离他近，但是影响力小的强得多。
-
-还有一个潜在的好处是，如何识别潜在影响力强，比如只有5000粉丝，但是只要有一个机遇，就变成100万粉丝的大V，如果是企业家，或者爆款作品的演员，爆款paper的学者，即将。这样的传播增长效率高
-
-（3）
-
-一、研究的是什么问题？
-V1，V2，哪个是活跃用户。
-是左边有很多闭合关系的大V的v1，还是右边有很多开放关系的大V的V2？
-谁的影响力更大？
-
-在这里，衡量影响力大指标是什么：转发多？
-
-影响力最大的用户，不是那种有多少大V互相关注的用户，虽然互关，但有可能不转发，是死用户，付出多少努力的用户。愿意在微博上经营且个人能力有潜力的用户。
-统计的转发量不是粉丝量吗？input的是啥？
-
-类似的有，图书编辑要发现谁最有潜力写书，是阅读数还是转发数，还是内容完整性、体系性
-
-很多特征提炼不起来。
-
-有个人为什么让我，是因为有人转发
-
-搜索的作用没有提到。有的人被转发，是因为搜索，主题、不是因为关注。
-
-还有时间的特征，之前没有转发，现在有了，多了。这个没有纳入。Connecting the Dots模型。
-Connecting the Dots: Multivariate Time Series Forecasting with Graph Neural Networks
-
-作者：
-
-Zonghan Wu, Shirui Pan, Guodong Long, Jing Jiang, Xiaojun Chang, Chengqi Zhang
-
-来源：
-
-Machine Learning     
-
-Accepted by KDD 2020
-
-Submitted on 24 May 2020
+以上是针对homework6所做的工作和思考，非常感谢老师的审阅，由于时间和水平有限，请老师多多帮助指正，感谢。
 
 
-（5）FOREST,MIXhop，分别是什么特征
-（6）由此延伸到。一个人如果不仅仅在工作地，还去别的地方，所谓除了工作读书，还要行万里路。没多走一公里，到一个地方，见X人，聊Y人，个人的收入，平均可支配收入，国家GDP会增长多少倍。如果封闭，可能反智，社会问题。从而导致倒退。
+参考资料：
+1. @inproceedings{qiu2018deepinf, title={DeepInf: Social Influence Prediction with Deep Learning}, author={Qiu, Jiezhong and Tang, Jian and Ma, Hao and Dong, Yuxiao and Wang, Kuansan and Tang, Jie},
+  booktitle={Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD’18)}, year={2018}}
 
-旅游网站仅仅说去哪儿好玩，是没有前途的，要把它做成投资，有产出，才能鼓励人家去玩。
+2. @inproceedings{ijcai2019-560,
+  title     = {Multi-scale Information Diffusion Prediction with Reinforced Recurrent Networks},
+  author    = {Yang, Cheng and Tang, Jian and Sun, Maosong and Cui, Ganqu and Liu, Zhiyuan},
+  booktitle = {Proceedings of the Twenty-Eighth International Joint Conference on
+               Artificial Intelligence, {IJCAI-19}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},             
+  pages     = {4033--4039},
+  year      = {2019},
+  month     = {7},
+  doi       = {10.24963/ijcai.2019/560},
+  url       = {https://doi.org/10.24963/ijcai.2019/560},
+}
 
-有影响力的就是能够给人带来潜在增长的量。如何特征向量。
 
-（7）R-GCN，在邻居基础上加了关系，各种各样的关系。
-（8）个人的知识图谱
-（9）GAT的公式，各变量的含义书里有。
+
+3. “Connecting the Dots: Multivariate Time Series Forecasting with Graph Neural Networks，作者：Zonghan Wu, Shirui Pan, Guodong Long, Jing Jiang, Xiaojun Chang, Chengqi Zhang，来源：Machine Learning     ，Accepted by KDD 2020，Submitted on 24 May 2020”。
+
+4. Relational Graph Attention Networks Dan Busbridge, Dane Sherburn, Pietro Cavallo & Nils Y. Hammerla Babylon Health 60 Sloane Avenue SW3 3DD London, United Kingdom {dan.busbridge, dane.sherburn, pietro.cavallo nils.hammerla}@babylonhealth.com
