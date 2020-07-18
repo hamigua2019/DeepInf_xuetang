@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # encoding: utf-8
-# File Name: train.py
-# Author: Jiezhong Qiu
-# Create Time: 2017/11/08 07:43
+# File Name: train_gat.py
+# Author: Jiezhong Qiu(hamimelon)
+# Create Time: 2017/11/08 07:43  2020/7/17
 # TODO:
 
 from __future__ import absolute_import
