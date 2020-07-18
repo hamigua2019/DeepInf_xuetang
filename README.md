@@ -70,10 +70,10 @@ Homework6 Report
 
 1. @inproceedings{qiu2018deepinf, title = {DeepInf: Social Influence Prediction with Deep Learning}, author={Qiu, Jiezhong and Tang, Jian and Ma, Hao and Dong, Yuxiao and Wang, Kuansan and Tang, Jie}, booktitle={Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD’18)}, year={2018}}
 
-2. @inproceedings{ijcai2019-560, title = {Multi-scale Information Diffusion Prediction with Reinforced Recurrent Networks}, author = {Yang, Cheng and Tang, Jian and Sun, Maosong and Cui, Ganqu and Liu, Zhiyuan}, booktitle = {Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence, {IJCAI-19}}, publisher = {International Joint Conferences on Artificial Intelligence Organization}, pages = {4033--4039}, year = {2019}, month = {7}, doi = {10.24963/ijcai.2019/560}, url = {https://doi.org/10.24963/ijcai.2019/560},}
+2. @inproceedings{ijcai2019-560, title = {Multi-scale Information Diffusion Prediction with Reinforced Recurrent Networks}, author = {Yang, Cheng and Tang, Jian and Sun, Maosong and Cui, Ganqu and Liu, Zhiyuan}, booktitle = {Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence, {IJCAI-19}}, publisher = {International Joint Conferences on Artificial Intelligence Organization}, pages = {4033--4039}, year = {2019}, month = {7}, doi = {10.24963/ijcai.2019/560}, url = {https://doi.org/10.24963/ijcai.2019/560}}
 
-3. “Connecting the Dots: Multivariate Time Series Forecasting with Graph Neural Networks，作者：Zonghan Wu, Shirui Pan, Guodong Long, Jing Jiang, Xiaojun Chang, Chengqi Zhang，来源：Machine Learning     ，Accepted by KDD 2020，Submitted on 24 May 2020”。
+3. “Connecting the Dots: Multivariate Time Series Forecasting with Graph Neural Networks，作者：Zonghan Wu, Shirui Pan, Guodong Long, Jing Jiang, Xiaojun Chang, Chengqi Zhang，来源：Machine Learning     ，Accepted by KDD 2020，Submitted on 24 May 2020”
 
 4. Relational Graph Attention Networks Dan Busbridge, Dane Sherburn, Pietro Cavallo & Nils Y. Hammerla Babylon Health 60 Sloane Avenue SW3 3DD London, United Kingdom {dan.busbridge, dane.sherburn, pietro.cavallo nils.hammerla}@babylonhealth.com
 
-5. “认知推理：从图表示学习和与图神经网络的最新理论看AI的未来”，作者：学术君，学术头条。
+5. “认知推理：从图表示学习和与图神经网络的最新理论看AI的未来”，作者：学术君，学术头条。2020.4
