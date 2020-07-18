@@ -42,7 +42,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--tensorboard-log', type=str, default='', help="name of this run")
 parser.add_argument('--model', type=str, default='gcn', help="models used")
 parser.add_argument('--no-cuda', action='store_true', default=False, help='Disables CUDA training.')
-parser.add_argument('--seed', type=int, default=50, help='Random seed.')
+parser.add_argument('--seed', type=int, default=42, help='Random seed.')
 parser.add_argument('--epochs', type=int, default=500, help='Number of epochs to train.')
 parser.add_argument('--lr', type=float, default=0.1, help='Initial learning rate.')
 parser.add_argument('--weight-decay', type=float, default=5e-4,
