@@ -36,14 +36,15 @@ Homework6 Report
 
 1. 参数调整层面
    
-   保留了batch size 2048的设置，performance有所提高。
-   通过autoML自动调参也可以对参数进行调优。不过一般来说，论文框架里实现的performance一般参数层面已经经过调优，通过调整参数带来的performance改进空间不大，如果需要有较大程度的提高，需要从模型本身的修正出发。
+   保留了batch size 2048的设置，performance有所提高。通过autoML自动调参也可以对参数进行调优。
+   
+   一般来说，论文框架里实现的performance一般参数层面已经经过调优，通过调整参数带来的performance改进空间不大。如果需要有较大程度的提高，需要从模型本身的修正出发。
 
-2. 其他老师设计的框架
+2. 其他学者设计的可参考的新框架
 
    北京邮电大学杨成老师在2019年主要设计的FOREST框架，由于加入了宏观……元素，模型的performance有所提高。论文名称为：github地址为：FOREST框架，由于时间因素，没有来得及复现。
 
-   此外，唐老师也提到，Mixhop框架也有改进。
+   此外，唐杰老师在近期为“认知推理：从图表示学习和与图神经网络的最新理论看AI的未来”的主题演讲中，对相关主题论述时也提到，一个名为Mixhop的框架对此也有改进。
 
    R-GCN框架基于GCN基于聚合邻居的操作，又增加了聚合关系的维度，使节点的聚合变成一个双重聚合的过程，是异构图建模，相对于同构图建模的GCN、GAT，表现更佳。由于时间关系，无法实现，以后有时间再学习研究。
 
@@ -69,3 +70,5 @@ Homework6 Report
 3. “Connecting the Dots: Multivariate Time Series Forecasting with Graph Neural Networks，作者：Zonghan Wu, Shirui Pan, Guodong Long, Jing Jiang, Xiaojun Chang, Chengqi Zhang，来源：Machine Learning     ，Accepted by KDD 2020，Submitted on 24 May 2020”。
 
 4. Relational Graph Attention Networks Dan Busbridge, Dane Sherburn, Pietro Cavallo & Nils Y. Hammerla Babylon Health 60 Sloane Avenue SW3 3DD London, United Kingdom {dan.busbridge, dane.sherburn, pietro.cavallo nils.hammerla}@babylonhealth.com
+
+5. “认知推理：从图表示学习和与图神经网络的最新理论看AI的未来”，作者：学术君，学术头条。
