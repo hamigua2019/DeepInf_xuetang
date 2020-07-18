@@ -40,7 +40,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s') # incl
 # Training settings
 parser = argparse.ArgumentParser()
 parser.add_argument('--tensorboard-log', type=str, default='', help="name of this run")
-parser.add_argument('--model', type=str, default='gat', help="models used")
+parser.add_argument('--model', type=str, default='gcn', help="models used")
 parser.add_argument('--no-cuda', action='store_true', default=False, help='Disables CUDA training.')
 parser.add_argument('--seed', type=int, default=50, help='Random seed.')
 parser.add_argument('--epochs', type=int, default=500, help='Number of epochs to train.')
