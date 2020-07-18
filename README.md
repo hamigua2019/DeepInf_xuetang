@@ -12,9 +12,10 @@ Homework6 Report
 
    调整参数，完成DeepInf_gcn和DeepInf_gat两个模型的复现。两个模型的代码已上传到github的DeepInf_xuetang文件夹。
    
-   参数调整细节：所有参数都调整为与论文一致，除了batch size保留为原框架的2048。Lr修改为0.1；instances for training, validation and test分别修改为75, 12.5, 12.5。
+   参数调整细节工作：所有参数都调整为与论文一致，除了batch size保留为原框架的2048。Lr修改为0.1；instances for training, validation and test分别修改为75, 12.5, 12.5。
    
-   框架复现细节：复现gat代码时，将gcn的train.py原代码中model参数修改为gat即可运行。即如：“parser.add_argument('--model', type=str, default='gat’, help="models used")”
+   框架复现细节工作：复现gat代码时，将gcn的train.py原代码中model参数修改为gat即可运行。即如：“parser.add_argument('--model', type=str, default='gat’, help="models used")”
+   
    
 二、对比：
 
@@ -27,6 +28,7 @@ Homework6 Report
 2. GCN与GAT的对比
    
    GAT相比GCN，performance提高了5个百分点。GAT图注意力层与GCN的图卷积层相比，多了一个自适应的边权重系数的维度，可以对其进行自适应力的学习，并通过运用注意力机制，避免引入过多的噪声学习参数，这使得GAT具有高效的表达能力，所以，performance大大提高。
+   
 
 三、改进工作
 
@@ -39,24 +41,26 @@ Homework6 Report
 
 2. 其他老师设计的框架
 
-北京邮电大学杨成老师在2019年主要设计的FOREST框架，由于加入了宏观……元素，模型的performance有所提高。论文名称为：github地址为：FOREST框架，由于时间因素，没有来得及复现。
+   北京邮电大学杨成老师在2019年主要设计的FOREST框架，由于加入了宏观……元素，模型的performance有所提高。论文名称为：github地址为：FOREST框架，由于时间因素，没有来得及复现。
 
-此外，唐老师也提到，Mixhop框架也有改进。
+   此外，唐老师也提到，Mixhop框架也有改进。
 
-R-GCN框架基于GCN基于聚合邻居的操作，又增加了聚合关系的维度，使节点的聚合变成一个双重聚合的过程，是异构图建模，相对于同构图建模的GCN、GAT，表现更佳。由于时间关系，无法实现，以后有时间再学习研究。
+   R-GCN框架基于GCN基于聚合邻居的操作，又增加了聚合关系的维度，使节点的聚合变成一个双重聚合的过程，是异构图建模，相对于同构图建模的GCN、GAT，表现更佳。由于时间关系，无法实现，以后有时间再学习研究。
 
 3. 思考
 
-从发现潜在影响力用户的角度来说，除了从邻居、关系的图结构挖掘信息，还可以考虑两个方面：
+   从发现潜在影响力用户的角度来说，除了从邻居、关系的图结构挖掘信息，还可以考虑两个方面：
 
-一是从用户影响力成长时间序列结构的角度来思考，比如纳入用户在不同年度的转发数量的增长变化情况等。这里，有Connecting the Dots框架，值得参考。论文为：“Connecting the Dots: Multivariate Time Series Forecasting with Graph Neural Networks”，详见参考资料。
+   一是从用户影响力成长时间序列结构的角度来思考，比如纳入用户在不同年度的转发数量的增长变化情况等。这里，有Connecting the Dots框架，值得参考。论文为：“Connecting the Dots: Multivariate Time Series Forecasting with Graph Neural Networks”，详见参考资料。
 
-二是从节点属性图角度考虑，也可以考虑建立用户个人知识图谱，从概念成色、逻辑思维等进行影响力潜力赋分，发现潜在影响力者。等等。
+   二是从节点属性图角度考虑，也可以考虑建立用户个人知识图谱，从概念成色、逻辑思维等进行影响力潜力赋分，发现潜在影响力者。等等。
+   
+   
 
 以上是针对homework6所做的工作和思考，非常感谢老师的审阅，由于时间和水平有限，请老师多多帮助指正，感谢。
 
 
-参考资料：
+四、参考资料：
 
 1. @inproceedings{qiu2018deepinf, title = {DeepInf: Social Influence Prediction with Deep Learning}, author={Qiu, Jiezhong and Tang, Jian and Ma, Hao and Dong, Yuxiao and Wang, Kuansan and Tang, Jie}, booktitle={Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD’18)}, year={2018}}
 
