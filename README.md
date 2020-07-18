@@ -3,6 +3,7 @@ Homework6 Report
 2020/7/18
 
 
+
 一、已完成的工作：
 
 1. 阅读论文
@@ -18,6 +19,7 @@ Homework6 Report
    框架复现细节工作：复现gat代码时，将gcn的train.py原代码中model参数修改为gat即可运行。即如：“parser.add_argument('--model', type=str, default='gat’, help="models used")”
    
    
+   
 二、对比：
 
 1. 实现的结果与论文结果的对比：
@@ -30,6 +32,7 @@ Homework6 Report
    
    GAT相比GCN，performance提高了5个百分点。GAT图注意力层与GCN的图卷积层相比，多了一个自适应的边权重系数的维度，可以对其进行自适应力的学习，并通过运用注意力机制，避免引入过多的噪声学习参数，这使得GAT具有高效的表达能力，所以，performance大大提高。
    
+
 
 三、改进工作
 
@@ -60,6 +63,7 @@ Homework6 Report
    
 
 以上是针对homework6所做的工作和思考，非常感谢老师的审阅，由于时间和水平有限，其中多有错误疏漏、词不达意之处，请老师多多帮助指正，再次感谢：）
+
 
 
 四、参考资料：
