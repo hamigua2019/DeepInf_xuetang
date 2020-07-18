@@ -8,7 +8,8 @@ Homework6 Report
 
 1. 阅读论文
 
-   DeepInf框架解决的是根据邻居用户分析预测用户是否具有影响力的问题。
+   DeepInf框架解决的是根据活跃邻居用户分析预测用户是否活跃，是否具有影响力的问题。
+   主要考虑有3个或以上活跃邻居的用户，这些用户占比仅为8.75%。
 
 2. 复现模型。
 
@@ -16,7 +17,7 @@ Homework6 Report
    
    参数调整细节工作：所有参数都调整为与论文一致，除了batch size保留为原框架的2048。Lr修改为0.1；instances for training, validation and test分别修改为75, 12.5, 12.5。
    
-   框架复现细节工作：复现gat代码时，将gcn的train.py原代码中model参数修改为gat即可运行。即如：“parser.add_argument('--model', type=str, default='gat’, help="models used")”
+   框架复现细节工作：复现gat代码时，将gcn的train.py原代码中model的default参数修改为gat即可运行。
    
    
    
@@ -24,9 +25,9 @@ Homework6 Report
 
 1. 实现的结果与论文结果的对比：
 
-   原框架运行performance不高，GCN的F1值为48.35。参考论文调整参数后，GCN的F1值提高到了53.49，相比论文GCN的F1值53.21，提高了。
+   原代码运行performance不高，GCN框架的F1值仅为48.35。参考论文调整参数后，GCN框架的F1值提高到了53.49，提高了xx；相比论文GCN的F1值53.21，也略有提高，幅度为。
    
-   GAT方面，未修改参数时，框架的F1值为52.18，参数调整跟论文设置参数一致时，F1值提高到了58.32，与论文结果一致。
+   GAT方面，未修改参数时，框架的F1值为52.18，参数调整后，F1值提高到了58.32。
 
 2. GCN与GAT的对比
    
@@ -40,13 +41,13 @@ Homework6 Report
 
 1. 参数调整层面
    
-   保留了batch size 2048的设置，performance有所提高。通过autoML自动调参也可以对参数进行调优。
+   保留了batch size为“2048”的设置，performance有所提高。还通过autoML自动调参也可以对参数进行调优，这项工作由于水平和时间关系，没有能够完成。
    
-   一般来说，论文框架里实现的performance一般参数层面已经经过调优，通过调整参数带来的performance改进空间不大。如果需要有较大程度的提高，需要从模型本身的修正出发。
+   不过，考虑到论文所涉及的框架一般在参数层面已经经过调优，performance一般已经很优秀，通过调整参数带来的performance改进空间不大。如果需要有较大程度的提高，需要从模型本身的设计与修正出发。
 
 2. 其他学者设计的可参考的新框架
 
-   北京邮电大学杨成老师在2019年主要设计的FOREST框架，由于加入了宏观……元素，模型的performance有所提高。论文名称为：github地址为：FOREST框架，由于时间因素，没有来得及复现。
+   北京邮电大学杨成老师在2019年主要设计的FOREST框架，由于加入了宏观元素，模型的performance有部分提高。由于时间因素，本次作业没有来得及复现。论文名称为：“Multi-scale Information Diffusion Prediction with Reinforced Recurrent Networks”，详见参考资料。
 
    此外，唐杰老师在近期为“认知推理：从图表示学习和与图神经网络的最新理论看AI的未来”的主题演讲中，对相关主题论述时也提到，一个名为Mixhop的框架对此也有改进。
 
